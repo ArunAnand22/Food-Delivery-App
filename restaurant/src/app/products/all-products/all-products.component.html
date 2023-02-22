@@ -1,0 +1,41 @@
+<!-- Header banner section-->
+<header class="bg-d py-5 header-section" *ngIf="searchTerm==''">
+    <div class="container text-center">
+        <h1 class="fs-1">Come dine with us</h1>
+        <p class="fs-3">Laughter is brightest where food is best</p><br>
+        <p class="fs-4">~Irish proverb</p>
+    </div>
+</header>
+<!--Header banner section end-->
+
+<!--Body section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let product of allProducts | filter:searchTerm:'name' || 'category'">
+                <div class="card h-100" style="background-color: #f8f7f3">
+                    <!-- Product image-->
+                    <img class="card-img-top" src={{product.image}} alt="..." style="width:200px"/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.name}}</h5>
+                            <h5 class="fw-bolder">{{product.category}}</h5>
+                            <!-- Product price-->
+                            ${{product.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <button class="btn btn-outline-danger" (click)="addtowishlist(product)"><i class="fa-solid fa-heart"></i></button>
+                            <button class="btn btn-outline-warning"><i class="fa-solid fa-wallet" (click)="addtocart(product)"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Body section end-->

@@ -1,0 +1,13 @@
+.button-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around ;
+}
+
+
+/*New cart section*/
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }

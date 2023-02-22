@@ -1,0 +1,14 @@
+.header-section{
+    background: url('https://wallpapercave.com/wp/wp1874155.jpg');
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-section .container{
+    background-color: rgba(110, 96, 96, 0.3);
+    color: whitesmoke;
+}
+.header-section .container h1,p{
+    font-family: 'Labrada';
+}

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@1,200&display=swap');*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-img-top{
+    padding-top: 16px;
+}
+.card-img-top:hover{
+    transform: scale(1.6);
+    transition: 0.5s;
+}

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#255a5b;">  
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand fs-2 text-light" routerLink="/"><i class="fa-solid fa-utensils text-light"></i>TasteBuds</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <!-- seachbar -->
+                <input (keyup)="search($event)" type="text" placeholder="Search item.." class="form-control">
+                <li class="nav-item"><a class="nav-link active fs-5 text-light" aria-current="page" routerLink="products/wishlist">Wishlist</a></li>
+                <li class="nav-item"><a class="nav-link active fs-5 text-light" aria-current="page" routerLink="products/about-page">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light active fs-5 dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" >About</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item">Contact</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item">Location</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <button class="btn btn-outline-dark text-light" routerLink="products/cart">
+                    <i class="bi-cart-fill me-1 text-light"></i>
+                    Wallet
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">{{cartCount}}</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>

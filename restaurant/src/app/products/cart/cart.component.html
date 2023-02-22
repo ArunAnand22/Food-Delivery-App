@@ -1,0 +1,136 @@
+<!-- Empty cart -->
+<div class="container text-center" *ngIf="cartitem.length==0">
+    <div class="row">
+        <div class="col">
+            <img src="https://cdn.dribbble.com/users/887568/screenshots/3172047/ufo.gif" alt="Empty cart">
+            <h3 class="fs-3 text-danger">No item for delivery</h3>
+            <br>
+        </div>
+    </div>
+</div>
+<!-- Empty cart ends -->  
+
+<!-- New Cart section -->
+<section class=" mb-5" style="background-color: #eee;" *ngIf="cartitem.length!=0">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+  
+              <div class="row">
+  
+                <div class="col-lg-7">
+                  <h5 class="mb-3"><a routerLink="" class="text-body"><i
+                        class="fas fa-long-arrow-alt-left me-2"></i>Home page</a></h5>
+                  <hr>
+  
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                      <p class="mb-1">Your wallet</p>
+                      <p class="mb-0">You can signout from here</p>
+                    </div>
+                    
+                  </div>
+  
+                  <div class="card mb-3" *ngFor="let product of cartitem, let i=index">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <div>
+                            <img
+                              src={{product.image}}
+                              class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                          </div>
+                          <div class="ms-3">
+                            <h5>{{product.name}}</h5>
+                            <p class="small mb-0">{{product.category}}</p>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center">
+                          <div style="width: 50px;">
+                            <h5 class="fw-normal mb-0"></h5>
+                          </div>
+                          <div style="width: 80px;">
+                            <h5 class="mb-0">${{product.price}}</h5>
+                          </div>
+                          <button class="btn" (click)="remove(product)"><i class="fas fa-trash-alt text-danger"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+
+                
+                <div class="col-lg-5">
+                  <div class="card text-white rounded-3" style="background-color: #255a5b;">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="mb-0">Checkout</h5>
+                        <img src="https://www.transparentpng.com/thumb/user/single-user-icon-png-free--rLHSHx.png"
+                          class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
+                      </div>
+  
+                      <p class="small mb-2">Delivery Address:</p>
+  
+                      <form class="mt-4">
+                        <div class="form-outline form-white mb-4">
+                          <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                           placeholder="Enter your name" />
+                        </div>
+
+                        <div class="form-outline form-white mb-4">
+                            <input type="text" id="Houseno" class="form-control form-control-lg" siez="17"
+                             placeholder="House No." />
+                          </div>
+
+                          <div class="form-outline form-white mb-4">
+                            <input type="text" id="pin" class="form-control form-control-lg" siez="17"
+                             placeholder="Pincode" />
+                          </div>
+
+                          <div class="form-outline form-white mb-4">
+                            <input type="text" id="contact" class="form-control form-control-lg" siez="17"
+                             placeholder="Contact No." />
+                          </div>
+  
+                      </form>
+  
+                      <hr class="my-4">
+                      
+                      <h3>Discounts</h3>
+        <div [ngSwitch]="grandtotal"> 
+            <img *ngSwitchCase="5" (click)="discount5per()" src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sale-Stickers-PNG/5%25_Off_Sale_PNG_Transparent_Image.png?m=1473303302" style="width:100px" alt="5%">
+            <img *ngSwitchCase="10" (click)="discount10per()" src="https://i.pinimg.com/originals/43/b3/93/43b3931fa9a55a8e5e3dbbdc538ab0c9.png" style="width:100px" alt="10%">
+            <img *ngSwitchCase="15" (click)="discount15per()" src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Sale-Stickers-PNG/15%25_Off_Sale_PNG_Transparent_Image.png?m=1473303302" style="width:100px" alt="15%">
+            <img *ngSwitchDefault="5" (click)="discount5per()" src="http://internetmarketingteam.com/wp-content/uploads/2014/11/Promo-Code-Icon-300x187.png" style="width:100px" alt="Promo code">
+        </div>
+
+                      <div class="d-flex justify-content-between mb-4">
+                        <p class="mb-2">Total(Incl. taxes)</p>
+                        <span>Grand Total:$ {{grandtotal}}</span>
+                      </div>
+  
+                      <button type="button" (click)="proceed()" class="btn btn-warning btn-block btn-lg">
+                        <div class="d-flex justify-content-between">
+                          <span>Your Grand Total: {{updatedgrand}}</span>
+                          <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                        </div>
+                      </button>
+                      <div class="button-section mt-2">
+                        <button class="btn btn-danger" (click)="removeall()">Empty cart</button>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

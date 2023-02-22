@@ -1,0 +1,18 @@
+        Frontend Designing
+
+1)Lazy loading-process of loading components & modules and also improves application load time and perfomance
+ [ ng g m products --route products --module app.module ]
+
+ create a component lazy loaded in the products module  
+    -all-products [ ng g c products/all-products]
+    -cart [ ng g c products/cart]
+    -wishlist [ ng g c products/wishlist ]
+    -booking [ ng g c products/booking ]
+
+2.Integration
+ connecting between backend to frontend using HttpModule
+
+3.Searching for a product - Behaviour subject
+       [ ng g p products/pipes/filter ]
+
+4.Add to wishlist
